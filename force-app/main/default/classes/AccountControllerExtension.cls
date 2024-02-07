@@ -3,7 +3,7 @@
 **
 * @Funcionalidad: Extensión de controlador para la generación del informe de matriculas en la página visualforce MatriculasSI.page
 **
-* @Autor: arodriguez (20/11/2012)
+* @Autor: unai rodriguez (20/11/2012)
 **
 * @Modificaciones:  
 **/
@@ -22,6 +22,8 @@ public with sharing class AccountControllerExtension {
 	public String curso2 {get;set;}
 	public String curso3 {get;set;}
 	public totales total {get;set;}
+	public totales totalTest {get;set;}
+	// totalTest es variable nueva
 	
 	//Variables para mostrar el total de matriculas.
 	public class totales
