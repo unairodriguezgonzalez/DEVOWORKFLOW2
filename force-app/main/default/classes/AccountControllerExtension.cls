@@ -23,6 +23,7 @@ public with sharing class AccountControllerExtension {
 	public String curso3 {get;set;}
 	public totales total {get;set;}
 	public totales totalTest {get;set;}
+	// totalTest es variable nueva
 	
 	//Variables para mostrar el total de matriculas.
 	public class totales
