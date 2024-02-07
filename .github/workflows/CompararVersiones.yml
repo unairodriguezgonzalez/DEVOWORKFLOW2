@@ -1,0 +1,33 @@
+name: Comparar versiones al hacer pull
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  compare-versions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v2
+
+      - name: Obtener versiones
+        id: obtener-versiones
+        run: |
+          VERSION_ANTERIOR=$(git rev-parse HEAD)
+          git fetch origin ${{ github.head_ref }}
+          VERSION_ACTUAL=$(git rev-parse FETCH_HEAD)
+          echo "::set-output name=version-anterior::$VERSION_ANTERIOR"
+          echo "::set-output name=version-actual::$VERSION_ACTUAL"
+
+      - name: Comparar versiones
+        id: comparar-versiones
+        run: |
+          if [ "${{ steps.obtener-versiones.outputs.version-anterior }}" != "${{ steps.obtener-versiones.outputs.version-actual }}" ]; then
+            echo "Las versiones son diferentes"
+          else
+            echo "Las versiones son iguales"
+            exit 1
+          fi
