@@ -3,7 +3,7 @@
 **
 * @Funcionalidad: Extensión de controlador para la generación del informe de matriculas en la página visualforce MatriculasSI.page
 **
-* @Autor: arodriguez (20/11/2012)
+* @Autor: unai rodriguez (20/11/2012)
 **
 * @Modificaciones:  
 **/
