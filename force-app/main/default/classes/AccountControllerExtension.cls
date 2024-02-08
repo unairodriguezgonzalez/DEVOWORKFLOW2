@@ -1,7 +1,6 @@
-
-
 public with sharing class AccountControllerExtension {
-// Incluir comentario
+
+// Comentario incluido
 	public AccountControllerExtension(ApexPages.StandardController stdController)
 	{
 
