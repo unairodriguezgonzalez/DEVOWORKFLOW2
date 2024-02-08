@@ -7,7 +7,8 @@
  * Modifications Log
  * Ver   Date         Author      Modification
  * 1.0   02-08-2022   adelacruz   Initial Version
- * 2.0   07-02-2024   URG Versionado
+
+ * 2.0   07-02-2024   URG Versionado Segundo
 **/
 
 @isTest(seeAllData=true)
