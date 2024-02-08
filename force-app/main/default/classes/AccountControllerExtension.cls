@@ -7,6 +7,7 @@
 **
 * @Modificaciones:  
 **/
+
 public with sharing class AccountControllerExtension {
 
 	private final Account colegio;
