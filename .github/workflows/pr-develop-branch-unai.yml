@@ -22,17 +22,6 @@ on:
 # Jobs to be executed when the above conditions are met
 jobs:
 
-
-      validate-unai:
-        runs-on: ubuntu-latest
-        steps:
-          - uses: actions/checkout@v3
-          - name: Validate on Sandbox
-            uses: jawills/sf-deploy@v1.0
-            with:
-              SFDX_AUTH_URL: ${{ secrets.SFDX_AUTH_URL }}
-              DRY_RUN: true
-
     # This is the name of the job. You can give it whatever name you want
     validate-deployment-on-develop-org:
         # As mentioned in the blog post, this job runs inside a VM. Here we
@@ -58,6 +47,12 @@ jobs:
             # We'll need this later when we try to figure out which metadata has 
             # changed between commits, so that we can only deploy that metadata
             # to the destination org
+
+            - name: Validate on Sandbox UNAI
+              uses: jawills/sf-deploy@v1.0
+              with:
+                  SFDX_AUTH_URL: ${{ secrets.SFDX_AUTH_URL }}
+                  DRY_RUN: true
 
             - name: 'Checkout source code'
               uses: actions/checkout@v3
